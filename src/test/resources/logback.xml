@@ -3,7 +3,6 @@
         <appender name="loggIJsonFormatTilKibana" class="ch.qos.logback.core.ConsoleAppender">
             <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
         </appender>
-        <?xml version="1.0" encoding="UTF-8"?>
         <root level="INFO">
             <appender-ref ref="loggIJsonFormatTilKibana"/>
         </root>
