@@ -40,7 +40,7 @@ class AuditHendelseConsumer(
                         .event(cefEvent(melding.eventType))
                         .name("Sporingslogg")
                         .severity(CefMessageSeverity.INFO)
-                        .authorizationDecision(if (melding.forespørselTillat) AuthorizationDecision.PERMIT else AuthorizationDecision.DENY) // Bruk AuthorizationDecision.DENY hvis Nav-ansatt ikke fikk tilgang til å gjøre oppslag
+                        .authorizationDecision(if (melding.forespørselTillatt) AuthorizationDecision.PERMIT else AuthorizationDecision.DENY) // Bruk AuthorizationDecision.DENY hvis Nav-ansatt ikke fikk tilgang til å gjøre oppslag
                         .sourceUserId(melding.utførtAv)
                         .destinationUserId(melding.oppslagPå)
                         .timeEnded(melding.oppslagUtførtTid.toEpochMilli())
