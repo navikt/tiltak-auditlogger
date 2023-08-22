@@ -52,7 +52,7 @@ class AuditHendelseConsumer(
 
                     auditLogger.log(cefMessage)
                 } catch (ex: Exception) {
-                    log.error("Kunne ikke logge audit-hendelse", ex)
+                    log.error("Kunne ikke logge audit-hendelse: {}", ex.message)
                 }
                 consumer.commitAsync()
             }
