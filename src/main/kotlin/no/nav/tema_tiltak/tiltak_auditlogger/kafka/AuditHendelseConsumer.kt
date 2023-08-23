@@ -35,12 +35,12 @@ class AuditHendelseConsumer(
                     val melding: AuditEntry = mapper.readValue(it.value())
 
                     val cefMessage = CefMessage.builder()
-                        .applicationName(melding.appnavn)
+                        .applicationName(melding.appNavn)
                         .loggerName("tiltak-auditlogger")
                         .event(cefEvent(melding.eventType))
                         .name("Sporingslogg")
                         .severity(CefMessageSeverity.INFO)
-                        .authorizationDecision(if (melding.forespørselTillat) AuthorizationDecision.PERMIT else AuthorizationDecision.DENY) // Bruk AuthorizationDecision.DENY hvis Nav-ansatt ikke fikk tilgang til å gjøre oppslag
+                        .authorizationDecision(if (melding.forespørselTillatt) AuthorizationDecision.PERMIT else AuthorizationDecision.DENY) // Bruk AuthorizationDecision.DENY hvis Nav-ansatt ikke fikk tilgang til å gjøre oppslag
                         .sourceUserId(melding.utførtAv)
                         .destinationUserId(melding.oppslagPå)
                         .timeEnded(melding.oppslagUtførtTid.toEpochMilli())
@@ -52,7 +52,7 @@ class AuditHendelseConsumer(
 
                     auditLogger.log(cefMessage)
                 } catch (ex: Exception) {
-                    log.error("Kunne ikke logge audit-hendelse", ex)
+                    log.error("Kunne ikke logge audit-hendelse: {}", ex.message)
                 }
                 consumer.commitAsync()
             }
