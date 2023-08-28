@@ -52,7 +52,7 @@ class AuditHendelseConsumer(
 
                     auditLogger.log(cefMessage)
                 } catch (ex: Exception) {
-                    log.error("Kunne ikke logge audit-hendelse: {}", ex.message)
+                    log.error("Kunne ikke logge audit-hendelse: {}", vaskFnr(ex.message))
                 }
                 consumer.commitAsync()
             }
@@ -66,3 +66,9 @@ fun cefEvent(e: EventType) = when (e) {
     EventType.UPDATE -> CefMessageEvent.UPDATE
     EventType.DELETE -> CefMessageEvent.DELETE
 }
+
+private val fnrStringRegex = Regex("\"(\\d{4})\\d{7}\"")
+fun vaskFnr(message: String?) =
+    message?.replace(fnrStringRegex) { transform: MatchResult ->
+        "\"${transform.groups.get(1)?.value ?: "****"}*******\""
+    } ?: ""
