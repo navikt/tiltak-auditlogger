@@ -22,8 +22,8 @@
             <url>https://repo1.maven.org/maven2/</url>
         </repository>
         <repository>
-            <id>jitpack</id>
-            <url>https://jitpack.io</url>
+            <id>github</id>
+            <url>https://github-package-registry-mirror.gc.nav.no/cached/maven-release</url>
         </repository>
     </repositories>
 
@@ -139,9 +139,9 @@
             <version>2.15.0</version>
         </dependency>
         <dependency>
-            <groupId>com.github.navikt.common-java-modules</groupId>
+            <groupId>no.nav.common</groupId>
             <artifactId>audit-log</artifactId>
-            <version>3.2023.07.07_09.10-85326e9557f0</version>
+            <version>3.2023.09.13_04.55-a8ff452fbd94</version>
         </dependency>
     </dependencies>
 </project>
