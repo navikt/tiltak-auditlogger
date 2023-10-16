@@ -35,8 +35,8 @@ class AuditHendelseConsumer(
                     val melding: AuditEntry = mapper.readValue(it.value())
 
                     val cefMessage = CefMessage.builder()
-                        .applicationName(melding.appNavn)
-                        .loggerName("tiltak-auditlogger")
+                        .applicationName("Tiltaksgjennomforing")
+                        .loggerName(melding.appNavn)
                         .event(cefEvent(melding.eventType))
                         .name("Sporingslogg")
                         .severity(CefMessageSeverity.INFO)
