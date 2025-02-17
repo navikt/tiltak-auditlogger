@@ -1,9 +1,7 @@
 package no.nav.tema_tiltak.tiltak_auditlogger.kafka
 
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import no.nav.tema_tiltak.tiltak_auditlogger.AppConfig
 import org.junit.jupiter.api.Test
 import java.net.URI
 import java.time.Instant
@@ -11,14 +9,9 @@ import java.time.ZoneOffset
 import java.time.ZonedDateTime
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class JsonDeserialiseringTest {
-    val mapper = jacksonObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-
-    init {
-        mapper.registerModule(JavaTimeModule())
-    }
+    val mapper = AppConfig().mapper()
 
     @Test
     fun `test vellykket deserialsering av kafkamelding med timestamp`() {
@@ -94,8 +87,7 @@ class JsonDeserialiseringTest {
             )
             assertFalse("Deserialisering burde feile") { true }
         } catch (e: Exception) {
-            assertFalse("Vasket feilmelding burde ikke inneholde fnr") { vaskFnr(e.message).contains(testFnr) }
-            assertTrue("Vasket feilmelding inneholder maskert fnr") { vaskFnr(e.message).contains("\"1612*******\"") }
+            assertFalse("Vasket feilmelding burde ikke inneholde fnr") { e.message!!.contains(testFnr) }
         }
     }
 }
