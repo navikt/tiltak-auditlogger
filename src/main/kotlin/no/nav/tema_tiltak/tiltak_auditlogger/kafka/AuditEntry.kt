@@ -13,5 +13,6 @@ data class AuditEntry(
     val beskrivelse: String, // Beskrivelse av hva som er gjort, bør være "menneskelig lesbar"
     val requestUrl: URI,
     val requestMethod: String,
-    val correlationId: String
+    val correlationId: String,
+    val entitetId: String?,
 )

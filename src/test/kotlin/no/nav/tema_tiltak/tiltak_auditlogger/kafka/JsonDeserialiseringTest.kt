@@ -45,7 +45,8 @@ class JsonDeserialiseringTest {
             "Oppslag på korreksjoner",
             URI.create("/api/saksbehandler/korreksjon/01H8XVHYJWKBX71R87VDT80GGQ"),
             "GET",
-            "b9594bd4-58cb-4ec0-99ec-a261261b86d8"
+            "b9594bd4-58cb-4ec0-99ec-a261261b86d8",
+            null
         )
 
         assertEquals(auditEntry, mapper.readValue<AuditEntry>(jsonMelding))
@@ -77,7 +78,8 @@ class JsonDeserialiseringTest {
             "Oppslag på korreksjoner",
             URI.create("/api/saksbehandler/korreksjon/01H8XVHYJWKBX71R87VDT80GGQ"),
             "GET",
-            "b9594bd4-58cb-4ec0-99ec-a261261b86d8"
+            "b9594bd4-58cb-4ec0-99ec-a261261b86d8",
+            null
         )
 
         assertEquals(auditEntry, mapper.readValue<AuditEntry>(jsonMelding))
