@@ -6,6 +6,17 @@ metadata:
   labels:
     "team": "team-tiltak"
 spec:
+  gcp:
+    sqlInstances:
+      - type: POSTGRES_17
+        tier: {{db-tier}}
+        cascadingDelete: false
+        highAvailability: false
+        diskAutoresize: true
+        diskAutoresizeLimit: 60
+        databases:
+          - name: tiltak-auditlogger
+            envVarPrefix: DB
   env:
     - name: MILJO
       value: {{miljo}}
