@@ -3,6 +3,12 @@ spring:
     name: tiltak-auditlogger
   main:
     banner-mode: off
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_JDBC_URL}
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 4
   kafka:
     bootstrap-servers: ${KAFKA_BROKERS}
     properties:
