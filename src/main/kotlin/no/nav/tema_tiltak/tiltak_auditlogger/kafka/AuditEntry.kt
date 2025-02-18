@@ -1,5 +1,6 @@
 package no.nav.tema_tiltak.tiltak_auditlogger.kafka
 
+import no.nav.tema_tiltak.tiltak_auditlogger.Audit
 import java.net.URI
 import java.time.Instant
 
@@ -14,5 +15,7 @@ data class AuditEntry(
     val requestUrl: URI,
     val requestMethod: String,
     val correlationId: String,
-    val entitetId: String?,
-)
+    val entitetId: String?
+) {
+    fun cacheNøkkel() = if (entitetId != null) Audit(utførtAv, entitetId, correlationId) else null
+}
