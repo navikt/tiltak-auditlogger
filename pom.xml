@@ -86,12 +86,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test-junit5</artifactId>
-            <version>2.0.21</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
@@ -112,11 +106,6 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.jetbrains.exposed</groupId>-->
-<!--            <artifactId>exposed-spring-boot-starter</artifactId>-->
-<!--            <version>0.59.0</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-kotlin</artifactId>
@@ -129,6 +118,16 @@
             <groupId>no.nav.common</groupId>
             <artifactId>audit-log</artifactId>
             <version>3.2023.09.13_04.55-a8ff452fbd94</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test-junit5</artifactId>
+            <version>2.0.21</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
