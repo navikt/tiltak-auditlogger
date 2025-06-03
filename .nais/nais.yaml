@@ -41,9 +41,11 @@ spec:
     max: 1
     cpuThresholdPercentage: 50
   resources:
+    limits:
+      memory: "416Mi"
     requests:
       cpu: "200m"
-      memory: "512Mi"
+      memory: "352Mi"
   observability:
     autoInstrumentation:
       enabled: true
