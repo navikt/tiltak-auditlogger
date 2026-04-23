@@ -1,0 +1,17 @@
+# Auditmelding
+POST http://localhost:8080/melding
+Content-Type: application/json
+
+{
+  "appNavn": "tiltaksgjennomforing-test",
+  "beskrivelse": "En auditmelding",
+  "correlationId": "korrelasjonid",
+  "entitetId": "entitet",
+  "eventType": "CREATE",
+  "forespørselTillatt": true,
+  "oppslagPå": "deltakerfnr",
+  "requestMethod": "GET",
+  "requestUrl": "tiltaksgjennomforing/avtale",
+  "utførtAv": "TESTER",
+  "oppslagUtførtTid": "2025-01-01T12:12:12.00000Z"
+}

@@ -2,8 +2,8 @@ package no.nav.team_tiltak.tiltak_auditlogger.kafka
 
 import com.fasterxml.jackson.module.kotlin.readValue
 import no.nav.team_tiltak.tiltak_auditlogger.AppConfig
-import no.nav.team_tiltak.tiltak_auditlogger.kafka.AuditEntry
-import no.nav.team_tiltak.tiltak_auditlogger.kafka.EventType
+import no.nav.team_tiltak.tiltak_auditlogger.domene.AuditEntry
+import no.nav.team_tiltak.tiltak_auditlogger.domene.EventType
 import org.junit.jupiter.api.Test
 import java.net.URI
 import java.time.Instant
