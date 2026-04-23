@@ -12,7 +12,7 @@ class AuditloggerApplication
 fun main(args: Array<String>) {
     runApplication<AuditloggerApplication>(*args) {
         if (System.getenv("MILJO") == null) {
-            println("Kan ikke startes uten miljøvariabel MILJO. Lokalt kan LocalApplication kjøres.")
+            println("Kan ikke startes uten miljøvariabel MILJO. Lokalt kan LokalAuditloggerApplication kjøres.")
             exitProcess(1)
         }
         setAdditionalProfiles(System.getenv("MILJO"), "kafka")
