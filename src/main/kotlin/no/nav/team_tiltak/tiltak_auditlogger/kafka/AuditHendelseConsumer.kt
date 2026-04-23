@@ -1,4 +1,4 @@
-package no.nav.tema_tiltak.tiltak_auditlogger.kafka
+package no.nav.team_tiltak.tiltak_auditlogger.kafka
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
@@ -8,7 +8,7 @@ import no.nav.common.audit_log.cef.CefMessageEvent
 import no.nav.common.audit_log.cef.CefMessageSeverity
 import no.nav.common.audit_log.log.AuditLogger
 import no.nav.common.audit_log.log.AuditLoggerImpl
-import no.nav.tema_tiltak.tiltak_auditlogger.utils.log
+import no.nav.team_tiltak.tiltak_auditlogger.utils.log
 import org.springframework.context.annotation.Profile
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component

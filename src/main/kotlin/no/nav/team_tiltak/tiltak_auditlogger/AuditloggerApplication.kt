@@ -1,4 +1,4 @@
-package no.nav.tema_tiltak.tiltak_auditlogger
+package no.nav.team_tiltak.tiltak_auditlogger
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
