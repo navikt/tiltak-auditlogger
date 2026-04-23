@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.4</version>
+        <version>3.5.13</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -103,6 +103,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -112,11 +113,6 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.jetbrains.exposed</groupId>-->
-<!--            <artifactId>exposed-spring-boot-starter</artifactId>-->
-<!--            <version>0.59.0</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-kotlin</artifactId>
@@ -128,7 +124,7 @@
         <dependency>
             <groupId>no.nav.common</groupId>
             <artifactId>audit-log</artifactId>
-            <version>3.2023.09.13_04.55-a8ff452fbd94</version>
+            <version>3.2025.11.10_14.07-a9f44944d7bc</version>
         </dependency>
     </dependencies>
 </project>
